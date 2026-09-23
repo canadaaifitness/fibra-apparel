@@ -1,0 +1,13 @@
+{
+  "name": "FIBRA Apparel",
+  "short_name": "FIBRA",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#d8ccbc",
+  "theme_color": "#d8ccbc",
+  "description": "FIBRA Apparel — premium contemporary clothing and accessories.",
+  "icons": [
+    {"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}
+  ]
+}
