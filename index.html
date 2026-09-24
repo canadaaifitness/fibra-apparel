@@ -176,7 +176,16 @@
     .selector-close{right:12px;top:10px;border-color:rgba(255,255,255,.22);background:rgba(20,18,18,.55);color:#fff}
     .selector-close:hover{background:rgba(255,255,255,.18);color:#fff}
     @media(max-width:600px){.selector-side{width:calc(100% - 36px)}.selector-card{padding:22px 18px 18px;border-radius:13px}.selector-logo{margin-bottom:15px}.selector-card .brand{width:132px}.country-image img{object-position:center}}
-  </style>
+  
+    /* Country selector tuning: full unblurred image, transparent card to the right. */
+    .country-layer{background:#d7c8b5}
+    .country-image img{object-fit:contain!important;object-position:center!important;animation:none!important;transform:none!important;filter:none!important}
+    .country-image:after{background:rgba(12,11,10,.12)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+    .selector-side{justify-self:end;width:min(360px,calc(100vw - 36px));margin-right:clamp(20px,7vw,100px)}
+    .selector-card,.selector-card:hover{background:rgba(27,24,24,.14)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;transform:none!important}
+    .selector-close{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+    @media(max-width:680px){.country-image img{object-fit:contain!important}.selector-side{justify-self:center;margin-right:0}}
+</style>
 </head>
 <body class="country-open">
   <div id="store" aria-hidden="true">
