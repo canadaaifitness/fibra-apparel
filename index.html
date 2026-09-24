@@ -185,6 +185,17 @@
     .selector-card,.selector-card:hover{background:rgba(27,24,24,.14)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important;transform:none!important}
     .selector-close{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
     @media(max-width:680px){.country-image img{object-fit:contain!important}.selector-side{justify-self:center;margin-right:0}}
+
+    /* Small interaction cues only; the backdrop stays static and sharp. */
+    .selector-card{animation:selectorFadeIn .32s ease-out both!important}
+    .country-select{cursor:pointer;transition:background-color .18s ease,border-color .18s ease,box-shadow .18s ease}
+    .country-select:hover{background:rgba(255,255,255,.25);border-color:rgba(255,255,255,.34)}
+    .country-select:focus-visible{outline:2px solid rgba(255,255,255,.78);outline-offset:3px;box-shadow:0 0 0 4px rgba(255,255,255,.12)}
+    #changeCountry{transition:color .18s ease,opacity .18s ease}
+    #changeCountry:hover{opacity:.76}
+    #changeCountry:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+    @keyframes selectorFadeIn{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:translateX(0)}}
+    @media(prefers-reduced-motion:reduce){.selector-card{animation:none!important}.country-select,#changeCountry{transition:none!important}}
 </style>
 </head>
 <body class="country-open">
