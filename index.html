@@ -174,7 +174,7 @@
         <div class="nav-item">
           <button class="nav-trigger" type="button" aria-expanded="false" aria-controls="womanMenu">Woman</button>
           <div class="dropdown" id="womanMenu" role="menu">
-            <a href="#collection" role="menuitem" data-action="Woman · New In">New In</a>
+            <a href="#productMeasurements" role="menuitem" data-scroll-target="productMeasurements">New In</a>
             <a href="#collection" role="menuitem" data-action="Woman · Spring Summer 26">Spring Summer’26</a>
             <a href="#collection" role="menuitem" data-action="Woman · Tops & Blouses">Tops &amp; Blouses</a>
             <a href="#collection" role="menuitem" data-action="Woman · Dresses & Skirts">Dresses &amp; Skirts</a>
@@ -243,8 +243,8 @@
         <h1 class="serif reveal delay-1">Quiet form.<em>Bold feeling.</em></h1>
         <p class="description reveal delay-2">Relaxed proportions, considered details and an everyday silhouette designed to move with you.</p>
         <div class="hero-cta reveal delay-3">
-          <button class="primary" type="button" data-action="Collection opening soon">Explore the edit <span>→</span></button>
-          <button class="secondary" type="button" data-action="Lookbook opening soon">View lookbook <span>↗</span></button>
+          <button class="primary" type="button" data-scroll-target="productMeasurements">See photos &amp; sizes <span>→</span></button>
+          <button class="secondary" type="button" data-scroll-target="productMeasurements">View lookbook <span>↗</span></button>
         </div>
         <p class="edition eyebrow">FIBRA / We are your vibe</p>
       </section>
@@ -369,6 +369,12 @@
         toast.classList.add('show');
         clearTimeout(toastTimer);
         toastTimer = setTimeout(() => toast.classList.remove('show'), 2100);
+      }));
+
+      document.querySelectorAll('[data-scroll-target]').forEach(link => link.addEventListener('click', event => {
+        event.preventDefault();
+        const target = document.getElementById(link.dataset.scrollTarget);
+        if (target) target.scrollIntoView({behavior: 'smooth', block: 'start'});
       }));
 
       const menuItems = [...document.querySelectorAll('.nav-item')];
